@@ -12,7 +12,6 @@ services:
       - mysql_data:/var/lib/mysql
     restart: always
 
-
   backend:
     build:
       context: /home/viacheslav/dev/java/agt/dockermysql
