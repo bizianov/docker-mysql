@@ -8,6 +8,8 @@ ADD settings.xml /root/.m2/settings.xml
 ADD pom.xml /docker-mysql
 ADD src /docker-mysql/src
 
+RUN ["mvn", "clean", "install"]
+
 RUN cp /docker-mysql/target/docker-mysql-1.0-SNAPSHOT.jar /docker-mysql/app.jar
 RUN sh -c 'touch /docker-mysql/app.jar'
 ENV JAVA_OPTS=""
